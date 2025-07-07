@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { text-align: center; }
+        .section { margin-top: 20px; }
+        .doc-image { max-width: 200px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='logo.png') }}" width="120">
+        <h2>Employment Application Summary</h2>
+    </div>
+
+    <div class="section"><strong>Full Name:</strong> {{ name }}</div>
+    <div class="section"><strong>Email:</strong> {{ email }}</div>
+    <div class="section"><strong>Phone:</strong> {{ phone }}</div>
+    <div class="section"><strong>Education:</strong><br>{{ education }}</div>
+    <div class="section"><strong>Experience:</strong><br>{{ experience }}</div>
+    <div class="section"><strong>References:</strong><br>{{ references }}</div>
+
+    <div class="section"><strong>Passport Photo:</strong><br>
+        <img src="data:image/png;base64,{{ photo_data }}" class="doc-image">
+    </div>
+
+    <div class="section"><strong>Aadhar Card:</strong><br>
+        <img src="data:image/png;base64,{{ aadhar_data }}" class="doc-image">
+    </div>
+
+    <div class="section"><strong>PAN Card:</strong><br>
+        <img src="data:image/png;base64,{{ pan_data }}" class="doc-image">
+    </div>
+</body>
+</html>
