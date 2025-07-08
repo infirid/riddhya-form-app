@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Riddhya Form</title></head>
+<body>
+    <h2>Riddhya Healthcare - Application Form</h2>
+    <form method="POST" action="/generate_pdf" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="text" name="phone" placeholder="Phone"><br>
+        <textarea name="education" placeholder="Education"></textarea><br>
+        <textarea name="experience" placeholder="Experience"></textarea><br>
+        <textarea name="references" placeholder="References"></textarea><br>
+        <label>Upload Photo:</label><input type="file" name="photo" required><br>
+        <label>Upload Aadhar:</label><input type="file" name="aadhar" required><br>
+        <label>Upload PAN:</label><input type="file" name="pan" required><br>
+        <button type="submit">Generate PDF</button>
+    </form>
+</body>
+</html>
