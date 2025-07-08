@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, send_file
 from weasyprint import HTML
 import io
 import base64
+import os
 
 app = Flask(__name__)
 
@@ -34,8 +35,6 @@ def generate_pdf():
     HTML(string=rendered, base_url=request.base_url).write_pdf(pdf_file)
     pdf_file.seek(0)
     return send_file(pdf_file, as_attachment=True, download_name='application_form.pdf', mimetype='application/pdf')
-
-import os
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
