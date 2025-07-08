@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head><title>Riddhya Form</title></head>
+<head>
+    <title>Employment Application</title>
+</head>
 <body>
-    <h2>Riddhya Healthcare - Application Form</h2>
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='logo.png') }}" width="150">
+        <h2>Employment Application Form</h2>
+    </div>
     <form method="POST" action="/generate_pdf" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Name" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="text" name="phone" placeholder="Phone"><br>
-        <textarea name="education" placeholder="Education"></textarea><br>
-        <textarea name="experience" placeholder="Experience"></textarea><br>
-        <textarea name="references" placeholder="References"></textarea><br>
-        <label>Upload Photo:</label><input type="file" name="photo" required><br>
-        <label>Upload Aadhar:</label><input type="file" name="aadhar" required><br>
-        <label>Upload PAN:</label><input type="file" name="pan" required><br>
+        <label>Full Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Phone:</label><br>
+        <input type="text" name="phone" required><br><br>
+
+        <label>Education:</label><br>
+        <textarea name="education" rows="3" required></textarea><br><br>
+
+        <label>Experience:</label><br>
+        <textarea name="experience" rows="3" required></textarea><br><br>
+
+        <label>References:</label><br>
+        <textarea name="references" rows="3" required></textarea><br><br>
+
+        <label>Passport Photo:</label><br>
+        <input type="file" name="photo" accept="image/*" required><br><br>
+
+        <label>Aadhar Card:</label><br>
+        <input type="file" name="aadhar" accept="image/*" required><br><br>
+
+        <label>PAN Card:</label><br>
+        <input type="file" name="pan" accept="image/*" required><br><br>
+
         <button type="submit">Generate PDF</button>
     </form>
 </body>
 </html>
+
+
